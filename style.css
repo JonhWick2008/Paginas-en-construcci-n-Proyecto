@@ -1,132 +1,330 @@
-/* ===== ESTILO PÁGINA EN CONSTRUCCIÓN ===== */
+/* =========================================================
+   ESTILO GENERAL
+   ========================================================= */
 
 * {
     box-sizing: border-box;
+}
+
+html,
+body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-height: 100%;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: #080808;
+    color: #b7b7b7;
+    font-family: "Times New Roman", Times, serif;
     text-align: center;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        repeating-linear-gradient(
-            135deg,
-            #fff4b8 0px,
-            #fff4b8 25px,
-            #222 25px,
-            #222 50px
-        );
-
-    padding: 30px;
+    font-size: 16px;
 }
 
-/* Contenedor visual */
-body::before {
-    content: "";
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.tarjeta {
+    width: calc(100% - 40px);
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 1px solid #555;
+    background: #181a13;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+body > .tarjeta:first-of-type {
+    min-height: 125px;
+    margin-top: 16px;
+    margin-bottom: 14px;
+
+    padding: 8px 12px;
+
+    display: block;
+    position: relative;
+
+    text-align: left;
+}
+
+
+/* LOGO */
+
+body > .tarjeta:first-of-type img {
+    width: 85px;
+    height: 112px;
+
+    object-fit: contain;
+
+    display: block;
     position: absolute;
-    width: 90%;
-    max-width: 700px;
-    height: 85%;
-    background: #fff;
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
-    z-index: -1;
+    left: 10px;
+    top: 10px;
 }
 
-/* Título */
-h1 {
-    color: #222;
-    background: #ffc400;
 
-    padding: 18px 35px;
-    border-radius: 15px;
+/* TEXTOS DEL ENCABEZADO */
 
-    border: 5px solid #222;
+body > .tarjeta:first-of-type h1 {
+    margin: 3px 0 2px 94px;
+    color: #999d22;
 
-    font-size: clamp(32px, 6vw, 55px);
-    font-weight: 900;
+    font-size: 29px;
+    line-height: 1.1;
 
-    text-transform: uppercase;
-
-    box-shadow: 0 8px 0 #222;
-
-    margin-bottom: 25px;
-
-    animation: aparecer 0.8s ease-out;
-}
-
-/* Texto */
-p {
-    max-width: 550px;
-
-    color: #333;
-    font-size: 20px;
-    line-height: 1.6;
     font-weight: bold;
-
-    margin-bottom: 25px;
+    white-space: nowrap;
 }
 
-/* Imagen del perrito */
-img {
-    width: 300px;
-    max-width: 80vw;
+body > .tarjeta:first-of-type h2 {
+    margin: 2px 0 1px 94px;
+
+    color: #999d22;
+
+    font-size: 20px;
+    line-height: 1.15;
+
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+body > .tarjeta:first-of-type h3 {
+    margin: 1px 0 0 94px;
+
+    color: #999d22;
+
+    font-size: 15px;
+    line-height: 1.2;
+
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+   ========================================================= */
+
+body > h1 {
+    width: calc(100% - 40px);
+    max-width: 1250px;
+
+    margin: 28px auto 12px auto;
+    padding: 0;
+
+    color: #aaa52d;
+
+    font-size: 34px;
+    line-height: 1.1;
+
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* =========================================================
+   TEXTO DE CONSTRUCCIÓN
+   ========================================================= */
+
+body > p {
+    width: calc(100% - 40px);
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    color: #b7d0e9;
+
+    font-size: 17px;
+    line-height: 1.35;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   IMAGEN DE CONSTRUCCIÓN
+   ========================================================= */
+
+body > img {
+    display: block;
+
+    width: 420px;
+    max-width: 85%;
+
     height: auto;
 
-    border-radius: 20px;
+    margin: 25px auto 40px auto;
 
-    border: 6px solid #ffc400;
+    padding: 0;
 
-    box-shadow:
-        0 8px 0 #222,
-        0 15px 30px rgba(0, 0, 0, 0.35);
+    border: none;
+    outline: none;
+    box-shadow: none;
 
-    transition: transform 0.3s ease;
+    background: transparent;
+
+    object-fit: contain;
 }
 
-/* Efecto al pasar el mouse */
-img:hover {
-    transform: scale(1.05) rotate(-2deg);
+
+/* =========================================================
+   PIE DE PÁGINA
+   ========================================================= */
+
+body > .tarjeta:last-of-type {
+    min-height: 80px;
+
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    padding: 14px;
+
+    background: #181a13;
+
+    text-align: center;
+    color: #999;
 }
 
-/* Animación inicial */
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
+body > .tarjeta:last-of-type h3 {
+    margin: 3px 0;
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    color: #999;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    font-weight: normal;
 }
 
-/* Adaptación para celulares */
-@media (max-width: 600px) {
 
-    body {
-        padding: 20px;
+/* =========================================================
+   IMÁGENES
+   ========================================================= */
+
+img {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body > .tarjeta:first-of-type {
+        width: calc(100% - 30px);
+        min-height: 110px;
+        padding: 8px;
     }
 
-    h1 {
+    body > .tarjeta:first-of-type img {
+        width: 70px;
+        height: 92px;
+        left: 8px;
+        top: 8px;
+    }
+
+    body > .tarjeta:first-of-type h1 {
+        margin-left: 78px;
+        font-size: 24px;
+    }
+
+    body > .tarjeta:first-of-type h2 {
+        margin-left: 78px;
+        font-size: 18px;
+    }
+
+    body > .tarjeta:first-of-type h3 {
+        margin-left: 78px;
+        font-size: 14px;
+    }
+
+    body > h1 {
+        width: calc(100% - 30px);
         font-size: 30px;
-        padding: 15px 20px;
     }
 
-    p {
-        font-size: 17px;
+    body > p {
+        width: calc(100% - 30px);
+        font-size: 16px;
     }
 
-    img {
-        width: 250px;
+    body > img {
+        width: 350px;
+        max-width: 90%;
+    }
+
+    body > .tarjeta:last-of-type {
+        width: calc(100% - 30px);
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    body > .tarjeta:first-of-type {
+        min-height: 95px;
+        padding: 6px;
+    }
+
+    body > .tarjeta:first-of-type img {
+        width: 58px;
+        height: 76px;
+        left: 6px;
+        top: 6px;
+    }
+
+    body > .tarjeta:first-of-type h1 {
+        margin-left: 65px;
+        font-size: 19px;
+    }
+
+    body > .tarjeta:first-of-type h2 {
+        margin-left: 65px;
+        font-size: 15px;
+    }
+
+    body > .tarjeta:first-of-type h3 {
+        margin-left: 65px;
+        font-size: 12px;
+    }
+
+    body > h1 {
+        margin-top: 22px;
+        font-size: 27px;
+    }
+
+    body > p {
+        font-size: 15px;
+    }
+
+    body > img {
+        width: 300px;
+        max-width: 90%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    body > .tarjeta:last-of-type {
+        padding: 10px;
+    }
+
+    body > .tarjeta:last-of-type h3 {
+        font-size: 11px;
     }
 }
